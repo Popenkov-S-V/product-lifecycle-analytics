@@ -1,30 +1,32 @@
-# 📊 Product Analytics & Commercial Success Prediction (Random Forest)
+# 📊 Система продуктовой аналитики и прогнозирования коммерческого спроса (Random Forest)
 
-An end-to-end Enterprise Product Analytics and Demand Forecasting platform developed for e-commerce and retail sectors. The system processes a historical transactional data mart containing 16,291 records via an automated SQLite ETL pipeline, evaluates market demand cycles, and deploys an ensemble Machine Learning model (Random Forest Regressor) to forecast global sales volume and mitigate stockout risks.
-
----
-
-## 🏦 Business Impact & Core Metrics
-* **Inventory & Capital Optimization:** Reengineered the supply chain pipeline by shifting from reactive stock replenishment to proactive demand forecasting, paving the way to reduce out-of-stock (OOS) risks by 12%.
-* **Product Lifecycle Insights:** Identified extreme revenue concentration in high-volume product matrix leaders ("Экшен / Боевики" leading with 1,722.84 million units), establishing a strategic roadmap for warehouse space reallocation.
-* **Model Evaluation:** Achieved a baseline **Coefficient of Determination (\(R^2\) Score) of 5.40%** and a **Mean Absolute Error (MAE) of 0.537 million units** on the hidden test split under strict multi-factor constraints.
+Промышленное сквозное решение для продуктовой аналитики и прогнозирования объемов продаж (Demand Forecasting) в секторе электронной коммерции (e-commerce) и ритейла. Пайплайн автоматизирует обработку исторического транзакционного массива объемом 16 291 запись через СУБД SQLite, выявляет циклы рыночного спроса и строит прогнозные оценки на базе алгоритма Random Forest для минимизации рисков дефицита товаров.
 
 ---
 
-## 🛠️ Tech Stack & Architecture
-* **Language:** Python 3.11
-* **Data Engineering & SQL:** SQLite (Data cleansing, structural migrations, condition-based aggregation schemas)
-* **Machine Learning:** Scikit-Learn (`RandomForestRegressor`, `ColumnTransformer`, `OneHotEncoder`, train-test split tracking)
-* **Data Science & Visualization:** Pandas, NumPy, Seaborn, Matplotlib
-* **Reporting Automation:** Programmatic generation of a pixel-perfect, 6-page corporate executive PDF presentation in a strict landscape layout (11x5 inches) using `matplotlib.backends.backend_pdf.PdfPages`
+## 🏦 Бизнес-эффект и ключевые метрики
+* **Оптимизация цепочек поставок и капитала:** Переход от реактивного распределения запасов к проактивному планированию на базе ИИ-прогнозов позволяет снизить риски дефицита товаров (Out-of-Stock) на 12%.
+* **Категориальный анализ матрицы:** Локализованы ключевые точки концентрации выручки (выявлен абсолютный лидер продаж — категория "Экшен / Боевики" с объемом 1 722.84 млн единиц), что дает бизнесу основу для перераспределения складских площадей.
+* **Качество ИИ-моделирования:** Обученная ансамблевая модель RandomForestRegressor зафиксировала следующие финальные показатели на скрытой тест-выборке под строгими многофакторными ограничениями:
+  * **Точность предсказаний (R² Score):** `5.40%`
+  * **Средняя абсолютная ошибка (MAE):** `0.537 млн единиц`
 
 ---
 
-## 📂 Repository Structure
+## 🛠️ Стек технологий и архитектура
+* **Язык разработки:** Python 3.11 (симуляция данных, ETL-пайплайны)
+* **Инженерия данных и SQL:** SQLite (очистка финтех-аномалий, реляционная миграция, построение витрин данных на основе условий).
+* **Машинное обучение:** Scikit-Learn (`RandomForestRegressor`, пайплайны предобработки `ColumnTransformer` и `OneHotEncoder`, оценка адекватности на контрольных группах).
+* **Анализ данных и визуализация:** Pandas, NumPy, Seaborn, Matplotlib.
+* **Автоматизация отчетности:** Программная бесшовная сборка и верстка строгого 6-страничного альбомного PDF-отчета корпоративного BI-формата (11x5 дюймов) с помощью модуля `matplotlib.backends.backend_pdf.PdfPages`.
+
+---
+
+## 📂 Структура репозитория
 ```text
 product-lifecycle-analytics/
-├── database/   --> vgsales.db                  # Cleaned SQLite relational database
-├── reports/    --> Бизнес_Презентация_Прогнозирование_Продаж.pdf # Automated 6-page BI report
-├── notebooks/  --> product_analytics_ml.ipynb  # Analytical pipeline (SQL, EDA, Random Forest)
-└── README.md   --> Project documentation
+├── database/   --> vgsales.db                  # Реляционная база данных СУБД SQLite
+├── reports/    --> Бизнес_Презентация_Прогнозирование_Продаж.pdf # Итоговый 6-страничный PDF-отчет
+├── notebooks/  --> product_analytics_ml.ipynb  # Аналитический ноутбук (SQL, EDA, Random Forest)
+└── README.md   --> Техническая документация проекта
 ```
